@@ -53,7 +53,10 @@ impl Renderer {
         y = h as i32/2 - y;
         
         self.canvas.set_draw_color(color);
-        self.canvas.draw_point((x,y))
+        let res = self.canvas.draw_point((x,y));
+        //println!("pixel put at: ({}, {})", x, y);
+
+        return res;
     }
 
     pub(crate) fn present(&mut self) {

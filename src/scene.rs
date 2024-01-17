@@ -128,12 +128,12 @@ impl Scene {
     pub fn load(path: &str) -> Self {
         let scene_content = match fs::read_to_string(path) {
             Ok(content) => content,
-            Err(e) => panic!("{}", e),
+            Err(e) => panic!("Error reading string: {}", e),
         };
 
         let res = match serde_json::from_str(&scene_content) {
             Ok(scene) => scene,
-            Err(e) => panic!("{}", e),
+            Err(e) => panic!("Error converting string to json: {}", e),
         };
 
         res

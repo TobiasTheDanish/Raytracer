@@ -33,9 +33,6 @@ fn main() {
 
         print!("\rRendering pixels: {} of {}", iters, WINDOW_WIDTH * WINDOW_HEIGHT);
 
-        if iters % (WINDOW_HEIGHT * 20) == 0 {
-            context.present();
-        }
         context.exit_events();
     }
     println!("");
